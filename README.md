@@ -1,6 +1,6 @@
 # Growth Stats Playwright Tests
 
-Playwright-based smoke coverage for the public `growthstats.io` website.
+Playwright-based smoke coverage for the public [Growth Stats](https://www.growthstats.io/) website.
 
 ## Overview
 
