@@ -1,0 +1,19 @@
+{
+  "name": "growth-stats-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright test project for smoke coverage of the Growth Stats website.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0"
+  }
+}
