@@ -2,7 +2,7 @@ import { expect, test } from '@fixtures/base-fixture';
 import contactFormData from '@test-data/contact-form.json';
 
 test.describe('Growth Stats contact page', () => {
-  test('renders the contact form fields', async ({ contactPage }) => {
+  test('renders the contact form fields', async ({ contactPage }: any) => {
     await contactPage.goto();
 
     await expect(contactPage.heading).toBeVisible();
@@ -14,7 +14,7 @@ test.describe('Growth Stats contact page', () => {
     await expect(contactPage.submitButton).toBeVisible();
   });
 
-  test('accepts input in the contact form without submitting', async ({ contactPage }) => {
+  test('accepts input in the contact form without submitting', async ({ contactPage }: any) => {
     await contactPage.goto();
 
     await contactPage.nameField.fill(contactFormData.name);
