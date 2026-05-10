@@ -1,9 +1,11 @@
 import { expect, test } from '@fixtures/base-fixture';
 
 test.describe('Growth Stats home page', () => {
-  test('shows the hero content and primary CTA', async ({ homePage }) => {
+  test.beforeEach(async ({ homePage }) => {
     await homePage.goto();
+  });
 
+  test('shows the hero content and primary CTA', async ({ homePage }) => {
     await expect(homePage.heroHeading).toBeVisible();
     await expect(homePage.heroSubheading).toBeVisible();
     await expect(homePage.letsWorkTogetherLink).toHaveAttribute('href', '/contact');
@@ -11,8 +13,6 @@ test.describe('Growth Stats home page', () => {
   });
 
   test('opens the about and blog pages from the main navigation', async ({ homePage }) => {
-    await homePage.goto();
-
     await homePage.aboutLink.click();
     await expect(homePage.page).toHaveURL(/\/about$/);
     await expect(homePage.page.getByRole('heading', { level: 1, name: /Learn About Growth Stats/i })).toBeVisible();
@@ -24,8 +24,6 @@ test.describe('Growth Stats home page', () => {
   });
 
   test('reaches the SEO service page from the homepage', async ({ homePage }) => {
-    await homePage.goto();
-
     await homePage.seoServiceLink.click();
 
     await expect(homePage.page).toHaveURL(/\/search-engine-optimization$/);
